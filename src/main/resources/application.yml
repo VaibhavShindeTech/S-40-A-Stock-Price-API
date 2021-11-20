@@ -1,0 +1,18 @@
+#config server
+server:  port: 9091
+
+#Database config
+spring:  datasource:    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    username: system
+    password: system
+  jpa:    show-sql: true
+    hibernate:      ddl-auto: update
+    properties:      hibernate:
+        format_sql: true  application:    name: STOCK-PRICE-API
+eureka:  client:    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      default-zone: http://localhost:8761/eureka
+  instance:
+    hostname: localhost
